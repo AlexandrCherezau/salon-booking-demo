@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Студия красоты «Лён» — демо-сайт</title>
+  <meta name="description" content="Демонстрационный сайт студии красоты с онлайн-записью. Бренд вымышленный.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="demo-ribbon">Демо-проект для портфолио · салон вымышленный, записи хранятся локально</div>
+
+  <header class="nav">
+    <a href="#top" class="logo">Лён<span>·</span></a>
+    <nav class="nav-links">
+      <a href="#services">Услуги</a>
+      <a href="#masters">Мастера</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#booking" class="btn btn-small">Записаться</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Студия красоты · Казань, ул. Льняная, 12</p>
+        <h1>Спокойный уход<br><em>без спешки</em> и&nbsp;шума</h1>
+        <p class="lead">Стрижки, окрашивание, ногти и брови в светлой студии на&nbsp;четыре кресла.
+          Один клиент на мастера, чай из&nbsp;самовара и честный прайс.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn">Выбрать время</a>
+          <a href="#services" class="link-arrow">Смотреть цены →</a>
+        </div>
+        <dl class="hero-facts">
+          <div><dt>4</dt><dd>мастера</dd></div>
+          <div><dt>10–20</dt><dd>ежедневно</dd></div>
+          <div><dt>от 1 300 ₽</dt><dd>услуги</dd></div>
+        </dl>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="arch">
+          <svg viewBox="0 0 200 320" class="flax">
+            <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <path d="M100 320 C100 240 98 170 92 90"/>
+              <path d="M99 250 C80 220 66 205 52 150"/>
+              <path d="M100 230 C122 200 136 180 146 128"/>
+              <path d="M96 180 C84 160 76 140 74 104"/>
+              <path d="M98 160 C112 140 120 120 122 82"/>
+              <path d="M84 268 q-14 -6 -22 -20"/><path d="M114 284 q16 -6 24 -22"/>
+            </g>
+            <g class="petals">
+              <circle cx="92" cy="84" r="11"/><circle cx="52" cy="144" r="9"/>
+              <circle cx="146" cy="122" r="10"/><circle cx="74" cy="98" r="8"/>
+              <circle cx="122" cy="76" r="8"/>
+            </g>
+            <g class="cores">
+              <circle cx="92" cy="84" r="3"/><circle cx="52" cy="144" r="2.5"/>
+              <circle cx="146" cy="122" r="2.8"/><circle cx="74" cy="98" r="2.2"/>
+              <circle cx="122" cy="76" r="2.2"/>
+            </g>
+          </svg>
+        </div>
+        <div class="hero-card">
+          <span class="dot"></span>
+          <div><b>Ближайшее окно</b><span id="nearest">загружаем…</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Прайс</p>
+        <h2>Услуги и цены</h2>
+        <p class="muted">Цена фиксированная — называем её до начала процедуры.</p>
+      </div>
+      <div class="price-grid" id="price-grid"></div>
+    </section>
+
+    <section id="masters" class="section section-tinted">
+      <div class="section-head">
+        <p class="eyebrow">Команда</p>
+        <h2>Мастера</h2>
+      </div>
+      <div class="masters" id="masters-list"></div>
+    </section>
+
+    <section id="booking" class="section booking-section">
+      <div class="booking-intro">
+        <p class="eyebrow">Онлайн-запись</p>
+        <h2>Запишитесь за&nbsp;минуту</h2>
+        <p class="muted">Свободные окна берутся из реального расписания: занятое время
+          сразу пропадает из списка, а двойная запись невозможна.</p>
+        <ol class="steps-hint">
+          <li>Услуга и мастер</li><li>День и время</li><li>Имя и телефон</li>
+        </ol>
+      </div>
+
+      <div class="booking-card">
+        <form id="booking-form" novalidate>
+          <fieldset>
+            <legend><span>1</span> Услуга</legend>
+            <select id="service" name="service_id" required></select>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>2</span> Мастер</legend>
+            <div class="master-pick" id="master-pick" role="radiogroup"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>3</span> День</legend>
+            <div class="days" id="days" role="radiogroup"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span>4</span> Время</legend>
+            <div class="slots" id="slots" role="radiogroup">
+              <p class="muted small">Выберите мастера и день</p>
+            </div>
+          </fieldset>
+
+          <fieldset class="contacts-fields">
+            <legend><span>5</span> Контакты</legend>
+            <label>Имя<input id="name" name="name" autocomplete="name" minlength="2" maxlength="60" required placeholder="Как к вам обращаться"></label>
+            <label>Телефон<input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+7 900 000-00-00"></label>
+            <label class="wide"><span>Комментарий <span class="muted">(необязательно)</span></span><input id="comment" name="comment" maxlength="300" placeholder="Например: длинные волосы"></label>
+          </fieldset>
+
+          <div class="summary" id="summary"></div>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <button type="submit" class="btn btn-wide" id="submit">Записаться</button>
+          <p class="muted small center">Нажимая кнопку, вы соглашаетесь, что это демо и вам никто не позвонит.</p>
+        </form>
+
+        <div class="success" id="success" hidden>
+          <div class="success-mark">✓</div>
+          <h3>Вы записаны</h3>
+          <p id="success-text"></p>
+          <button type="button" class="btn btn-ghost" id="again">Записаться ещё</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section section-tinted">
+      <div class="section-head">
+        <p class="eyebrow">Отзывы</p>
+        <h2>Что говорят гости</h2>
+        <p class="badge-demo">Демо-отзывы: тексты-примеры, не реальные клиенты</p>
+      </div>
+      <div class="reviews">
+        <blockquote><p>«Пришла на окрашивание и впервые не сидела в очереди из пяти человек. Цвет ровно такой, как обсуждали.»</p><cite>Пример отзыва · окрашивание</cite></blockquote>
+        <blockquote><p>«Записался онлайн на восемь вечера, всё по времени. Стрижку объяснили, как укладывать самому.»</p><cite>Пример отзыва · мужская стрижка</cite></blockquote>
+        <blockquote><p>«Маникюр держится третью неделю. Очень тихо и уютно, хочется задержаться на чай.»</p><cite>Пример отзыва · маникюр</cite></blockquote>
+      </div>
+    </section>
+
+    <section id="contacts" class="section contacts">
+      <div>
+        <p class="eyebrow">Контакты</p>
+        <h2>Как нас найти</h2>
+        <ul class="contact-list">
+          <li><span>Адрес</span><div>Казань, ул. Льняная, 12 <em class="muted">(вымышленный)</em></div></li>
+          <li><span>Часы</span><div>Ежедневно с 10:00 до 20:00</div></li>
+          <li><span>Телефон</span><div>+7 900 000-00-00 <em class="muted">(демо)</em></div></li>
+          <li><span>Почта</span><div>hello@len-salon.example</div></li>
+        </ul>
+      </div>
+      <div class="map" aria-hidden="true">
+        <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="260" class="m-bg"/>
+          <path d="M-10 190 C80 170 140 210 230 180 S360 140 420 160" class="m-river"/>
+          <g class="m-road"><path d="M0 70 H400"/><path d="M0 130 H400"/><path d="M90 0 V260"/><path d="M250 0 V260"/><path d="M330 0 L170 260"/></g>
+          <g class="m-block"><rect x="105" y="85" width="60" height="30" rx="4"/><rect x="180" y="85" width="55" height="30" rx="4"/><rect x="265" y="20" width="60" height="38" rx="4"/><rect x="15" y="85" width="60" height="30" rx="4"/><rect x="15" y="15" width="60" height="40" rx="4"/></g>
+          <g transform="translate(212 112)"><circle r="18" class="m-pin-halo"/><circle r="8" class="m-pin"/></g>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="logo">Лён<span>·</span></span>
+    <span class="muted">Демонстрационный сайт для портфолио. Бренд, адрес и отзывы вымышлены.</span>
+    <a href="/admin" class="muted">Админ-панель (демо)</a>
+  </footer>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

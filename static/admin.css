@@ -1,0 +1,24 @@
+:root { --linen:#f3ede3; --paper:#fbf8f3; --ink:#2b2723; --soft:#5d554c; --sage:#3e4a39; --clay:#b0674a; --line:#ded4c4; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--linen); color:var(--ink); font:400 15px/1.5 "Manrope",system-ui,sans-serif; }
+.bar { display:flex; align-items:center; gap:24px; padding:16px clamp(16px,4vw,56px); background:var(--sage); color:#eceee4; }
+.logo { font:600 30px/1 "Cormorant Garamond",serif; color:#fbf8f3; text-decoration:none; }
+.logo span { color:#e2a48a; }
+.tag { font-size:13px; opacity:.8; }
+main { padding:40px clamp(16px,4vw,56px); max-width:1400px; margin:0 auto; }
+.head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; }
+h1 { font:500 52px/1 "Cormorant Garamond",serif; margin:0; }
+.stats { display:flex; gap:16px; }
+.stats div { background:var(--paper); border-radius:14px; padding:14px 22px; min-width:150px; }
+.stats b { display:block; font:600 28px/1.1 "Cormorant Garamond",serif; color:var(--sage); }
+.stats span { font-size:13px; color:var(--soft); }
+.chips { display:flex; gap:8px; flex-wrap:wrap; margin:24px 0; }
+.chip { background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:13px; }
+.table-wrap { background:var(--paper); border-radius:18px; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; min-width:820px; }
+th { text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--clay); padding:16px 18px; border-bottom:1.5px solid var(--ink); }
+td { padding:14px 18px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:last-child td { border-bottom:0; }
+.num { white-space:nowrap; font-variant-numeric:tabular-nums; }
+.muted { color:var(--soft); font-size:13px; }
+.empty { text-align:center; padding:48px; color:var(--soft); }
